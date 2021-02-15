@@ -1,0 +1,37 @@
+    body {
+        padding: 100px;
+    }
+    
+    #login-area h1 {
+        padding-top: 55px;
+    }
+    
+    .submit-area {
+        margin-top: 50px;
+        box-shadow: 5px 5px 10px gray;
+        padding: 30px;
+        border-radius: 10px;
+    }
+    
+    #transection-area {
+        display: none;
+    }
+    
+    .deposit {
+        background-color: slateblue;
+    }
+    
+    .withdraw {
+        background-color: lightsalmon;
+    }
+    
+    .balance {
+        background-color: orange;
+    }
+    
+    .Tarea-comn {
+        margin: 0 50px;
+        padding: 20px;
+        border-radius: 5px;
+        color: white;
+    }
