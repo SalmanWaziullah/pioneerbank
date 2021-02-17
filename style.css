@@ -1,5 +1,6 @@
-    body {
-        padding: 30%;
+    .container {
+        margin: auto;
+        width: 1270px;
     }
     
     #login-area h1 {
