@@ -25,7 +25,7 @@
 
     <div id="transection-area" class="container">
         <div class="row pt-5">
-            <div class="col-md-4 ">
+            <div class="col-md-4 pt-3">
                 <div class="deposit Tarea-comn">
                     <h5>deposit</h5>
                     <h2>$
@@ -100,20 +100,22 @@
 
             const currentDeposit = document.getElementById("currentDeposit").innerText;
             const currentDepositAmount = parseFloat(currentDeposit);
-            console.log(currentDepositAmount);
             const totalDeposit = depositAmount + currentDepositAmount;
-
-
             document.getElementById("currentDeposit").innerText = totalDeposit;
+
+
             document.getElementById("depositAmount").value = "";
 
+            updateSpanText("totalBalance", depositAmount);
 
-            const currentBalance = document.getElementById("totalBalance").innerText;
-            const currentBalanceNumber = parseFloat(currentBalance);
-            const currentbalanceTotal = currentBalanceNumber + depositAmount;
-
-            document.getElementById('totalBalance').innerText = currentbalanceTotal;
         })
+
+        function updateSpanText(id, deposit) {
+            const currentBalance = document.getElementById(id).innerText;
+            const currentBalanceNumber = parseFloat(currentBalance);
+            const currentBalanceTotal = currentBalanceNumber + deposit;
+            document.getElementById(id).innerText = currentBalanceTotal;
+        }
 
 
         // withdraw button event handler
@@ -122,7 +124,13 @@
         withdrawAmount.addEventListener("click", function() {
             const withdrawNumber = document.getElementById("withdrawAmount");
             const withdraw = withdrawNumber.value;
-            console.log(withdraw);
+            const parsedWithdraw = parseFloat(withdraw);
+
+            updateSpanText("currentWithdraw", parsedWithdraw);
+
+            updateSpanText("totalBalance", -1 * parsedWithdraw);
+
+            document.getElementById("withdrawAmount").value = "";
         })
     </script>
 </body>
